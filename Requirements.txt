@@ -1,0 +1,6 @@
+pyfiglet
+colorama
+fake_useragent
+random
+bs4
+urllib
