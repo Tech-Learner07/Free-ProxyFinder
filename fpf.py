@@ -28,10 +28,6 @@ def initial(url):
         })
 
 
-def randomProxy(theList):
-    return random.randrange(len(theList))
-
-
 def writeProxy(text):
     f = open('proxy-list.txt','a')
     f.append(text)
@@ -40,12 +36,12 @@ def writeProxy(text):
 
 def isAlive(proxyList):
     proxiesCopy = proxyList
-    print("\n\033[1;32m [+] Checking proxy is alive or dead.")
-    proxyIn = randomProxy(proxiesCopy)
-    proxy = proxiesCopy[proxyIn]
     checked = 0
+    print("\n\033[1;32m [+] Checking proxy is alive or dead.")
+    proxyIn = checked
+    proxy = proxiesCopy[proxyIn]
 
-    while checked < len(proxyList):
+    while checked <= len(proxyList):
         for n in range(0, 100):
             req = Request('http://checkip.amazonaws.com/')
             req.set_proxy(proxy['ip'] + ':' + proxy['port'], 'https')
